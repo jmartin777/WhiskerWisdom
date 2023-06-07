@@ -1,6 +1,6 @@
 import React from 'react';
 import Fact from './Fact';
-import './Fact';
+import './FactContainer.css';
 
 
 function FactContainer({facts, deleteFact}){

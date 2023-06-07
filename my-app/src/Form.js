@@ -27,8 +27,8 @@ class Form extends Component {
       id: Date.now(),
       ...this.state // spreading in the title and description
     }
+    
     this.props.addFact(newFact); // using the addIdea method from App that we passed as a prop to Form
-    this.props.updateAPIinfo(newFact);
     this.clearInputs(); // invoking the method I wrote below to reset the inputs
   }
 

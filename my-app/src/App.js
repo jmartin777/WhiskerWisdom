@@ -3,6 +3,9 @@ import './App.css';
 import Fact from './Fact'
 import FactContainer from './FactContainer';
 import Form from './Form';
+import APIcalls from './APIcalls'
+import getFacts from './APIcalls';
+import { getFactByID,postFact, deleteFact } from './APIcalls';
 
 
 class App extends Component {
@@ -12,7 +15,14 @@ class App extends Component {
       facts: []
     }
   }
-
+  componentDidMount() {
+    getFacts()
+    .then(data =>{
+      console.log()
+      this.setState({facts: [...data]})
+    })
+    .catch(() => this.setState({error: "Get Facts Failed Please Check Server"}))
+  }
 
   addFact = (newFact) => {
     this.setState({ facts: [...this.state.facts, newFact] });
