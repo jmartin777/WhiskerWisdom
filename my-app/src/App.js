@@ -5,7 +5,7 @@ import FactContainer from './FactContainer';
 import Form from './Form';
 import APIcalls from './APIcalls'
 import getFacts from './APIcalls';
-import { getFactByID,postFact, deleteFact } from './APIcalls';
+import { getFactByID,postFact, deleteFact , patchFavorite } from './APIcalls';
 
 
 class App extends Component {
@@ -31,11 +31,15 @@ class App extends Component {
   handleFavoriteChange = (id) => {
     const updatedFacts = this.state.facts.map(fact => {
       if(fact.id == id){
+        patchFavorite(id,{'favorite':!fact.favorite})
         return{ ...fact, favorite: !fact.favorite}
+        
       }
+     
      return fact;
     });
     this.setState({ facts: updatedFacts });
+
   }
 
   deleteFact = (id) => {
