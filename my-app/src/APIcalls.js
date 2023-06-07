@@ -35,7 +35,7 @@ export const postFact = (dataIn) => {
 
 export const deleteFact=(id)=>{
     
-    return fetch('http://catfacts.cloud/facts/'+id, {
+    return fetch('http://catfacts.cloud:2053/facts/'+id, {
         method: 'DELETE',
         headers: {
         'Content-Type': 'application/json'

@@ -26,6 +26,7 @@ class App extends Component {
 
   addFact = (newFact) => {
     this.setState({ facts: [...this.state.facts, newFact] });
+    postFact(newFact)
   }
   
 
@@ -33,6 +34,7 @@ class App extends Component {
     console.log(id);
     const filteredFacts = this.state.facts.filter(fact => fact.id != id);
     this.setState({ facts: filteredFacts });
+    deleteFact(id)
   }
 
   
