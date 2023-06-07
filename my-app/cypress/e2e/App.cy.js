@@ -50,6 +50,33 @@ describe('Home Page', () => {
       .should('be.visible');
     });
 
+    it("Should intercept and handle GET request", () => {
+      const factData = [
+        {
+          favorite: false,
+          id: 23,
+          name: "Chlorine and Cats",
+          text: "The chlorine in fresh tap water irritates sensitive parts of the cat's nose. Let tap water sit for 24 hours before giving it to a cat."
+        },
+        {
+          favorite: false,
+          id: 20,
+          name: "Cancer in Cats",
+          text: "Cats, especially older cats, do get cancer. Many times this disease can be treated successfully."
+        }
+      ];
+      
+      cy.intercept("GET", "http://catfacts.cloud:2053/facts", {
+        statusCode: 200,
+        body: factData
+      }).as("getFacts");
+      cy.visit("http://localhost:3000/");
+      cy.wait("@getFacts").then((interception) => {
+        const responseBody = interception.response.body;
+        expect(responseBody).to.deep.equal(factData);
+      });
+    });
+
     it("Should create a new fact with POST intercept", () => {
       cy.get('[placeholder="Fact Title"]').type("Title text");
       cy.get('[placeholder="Fact"]').type("Fact text");
