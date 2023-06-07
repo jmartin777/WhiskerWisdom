@@ -8,6 +8,7 @@ function FactContainer({facts, deleteFact}){
     const factCards = facts.map(fact => {
       return (
         <Fact
+        key={fact.id}
           name={fact.name}
           text={fact.text}
           favorite={fact.id}

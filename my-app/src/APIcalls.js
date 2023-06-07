@@ -1,5 +1,5 @@
 const getFacts = () => {
-    return fetch('http://catfacts.cloud/facts')
+    return fetch('http://catfacts.cloud:2053/facts')
     .then(response => {
         if(!response.ok) {
           throw new Error("Failed to fetch facts");
@@ -9,7 +9,7 @@ const getFacts = () => {
   }
 
   const getFactByID = (id) => {
-    return fetch('http://catfacts.cloud/facts/'+id)
+    return fetch('http://catfacts.cloud:2053/facts/'+id)
     .then(response => {
         if(!response.ok) {
           throw new Error("Failed to fetch fact");
@@ -20,7 +20,7 @@ const getFacts = () => {
 
 export const postFact = (dataIn) => {
     //console.log(dataIn)
-    fetch('http://catfacts.cloud/facts', {
+    fetch('http://catfacts.cloud:2053/facts', {
         method: 'POST',
         body: JSON.stringify(dataIn),
         headers: {"Content-Type": "application/json"}
