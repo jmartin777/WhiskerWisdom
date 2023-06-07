@@ -28,7 +28,15 @@ class App extends Component {
     this.setState({ facts: [...this.state.facts, newFact] });
     postFact(newFact)
   }
-  
+  handleFavoriteChange = (id) => {
+    const updatedFacts = this.state.facts.map(fact => {
+      if(fact.id == id){
+        return{ ...fact, favorite: !fact.favorite}
+      }
+     return fact;
+    });
+    this.setState({ facts: updatedFacts });
+  }
 
   deleteFact = (id) => {
     console.log(id);
@@ -43,7 +51,7 @@ class App extends Component {
       <main className='App'>
         <h1>Whisker Wisdom</h1>
         <Form addFact={this.addFact} />
-        <FactContainer facts={this.state.facts} deleteFact={this.deleteFact} />
+        <FactContainer facts={this.state.facts} deleteFact={this.deleteFact} favChange={this.handleFavoriteChange} />
       </main>
     );
   }

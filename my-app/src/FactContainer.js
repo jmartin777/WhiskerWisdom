@@ -3,7 +3,7 @@ import Fact from './Fact';
 import './FactContainer.css';
 
 
-function FactContainer({facts, deleteFact}){
+function FactContainer({facts, deleteFact, favChange}){
 
     const factCards = facts.map(fact => {
       return (
@@ -11,9 +11,10 @@ function FactContainer({facts, deleteFact}){
           key={fact.id}
           name={fact.name}
           text={fact.text}
-          favorite={fact.id}
+          favorite={fact.favorite}
           id={fact.id}
           deleteFact = {deleteFact}
+          favChange= {favChange}
         />
       )
     })
