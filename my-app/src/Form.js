@@ -23,11 +23,11 @@ class Form extends Component {
 
   submitFact = event => {
     event.preventDefault(); // prevents the page from refreshing when the form submits
-    const newIdea = {
+    const newFact = {
       id: Date.now(),
       ...this.state // spreading in the title and description
     }
-    this.props.addFact(newIdea); // using the addIdea method from App that we passed as a prop to Form
+    this.props.addFact(newFact); // using the addIdea method from App that we passed as a prop to Form
     this.props.updateAPIinfo(newFact);
     this.clearInputs(); // invoking the method I wrote below to reset the inputs
   }
@@ -51,7 +51,7 @@ class Form extends Component {
             onChange={event => this.handleChange(event)}
             />
 
-            <button onClick={event => this.submitIdea(event)}>SUBMIT</button>  
+            <button onClick={event => this.submitFact(event)}>SUBMIT</button>  
         </form>
     )
   }
