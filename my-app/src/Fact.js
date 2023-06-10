@@ -3,15 +3,7 @@ import PropTypes from 'prop-types';
 import './Fact.css';
 
 const Fact = ({ name, text, favorite, id, deleteFact, favChange }) => {
-  Fact.propTypes = {
-    name: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    favorite: PropTypes.bool.isRequired,
-    id: PropTypes.number.isRequired,
-    deleteFact: PropTypes.func.isRequired,
-    favChange: PropTypes.func.isRequired
-  };
-  
+ 
     return (
       <div className='fact'>
         <h3>{name}</h3>
@@ -32,3 +24,12 @@ const Fact = ({ name, text, favorite, id, deleteFact, favChange }) => {
   }
 
 export default Fact;
+
+Fact.propTypes = {
+  name: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  favorite: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired,
+  deleteFact: PropTypes.func.isRequired,
+  favChange: PropTypes.func.isRequired
+};
