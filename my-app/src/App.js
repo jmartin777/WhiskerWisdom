@@ -5,6 +5,7 @@ import FactContainer from './FactContainer';
 import Form from './Form';
 import APIcalls from './APIcalls'
 import getFacts from './APIcalls';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { getFactByID,postFact, deleteFact , patchFavorite } from './APIcalls';
 
 
@@ -52,11 +53,13 @@ class App extends Component {
   
   render() {
     return (
-      <main className='App'>
+      <Router>
+       <main className='App'>
         <h1>Whisker Wisdom</h1>
         <Form addFact={this.addFact} />
         <FactContainer facts={this.state.facts} deleteFact={this.deleteFact} favChange={this.handleFavoriteChange} />
-      </main>
+       </main>
+      </Router>
     );
   }
 }
