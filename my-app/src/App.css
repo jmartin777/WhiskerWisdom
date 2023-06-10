@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-image: url('/Users/joshuamartin/turing_work/3mod/WhiskerWisdom/my-app/src/Assets/Cat.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: initial;
+  font-family: "Comic Sans MS", "Curlz MT", "Sniglet", cursive;
 }
 
 .App-logo {
