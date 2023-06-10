@@ -5,7 +5,7 @@ import './FactContainer.css';
 
 
 function FactContainer({facts, deleteFact, favChange}){
-   
+
     const factCards = facts.map(fact => {
       return (
         <Fact

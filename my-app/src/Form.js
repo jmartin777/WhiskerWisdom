@@ -36,7 +36,7 @@ class Form extends Component {
         <form>
             <input
             type='text'
-            placeholder='Fact Title'
+            placeholder='Cat Fact Title'
             name='name'
             value={this.state.name}
             onChange={event => this.handleChange(event)}
@@ -44,13 +44,13 @@ class Form extends Component {
 
             <input
             type='text'
-            placeholder='Fact'
+            placeholder='Cat Fact'
             name='text'
             value={this.state.text}
             onChange={event => this.handleChange(event)}
             />
 
-            <button onClick={event => this.submitFact(event)}>SUBMIT</button>  
+            <button onClick={event => this.submitFact(event)}>𝕊𝕦𝕓𝕞𝕚𝕥 🐾</button>  
         </form>
     )
   }

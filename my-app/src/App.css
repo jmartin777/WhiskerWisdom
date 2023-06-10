@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  background-image: url('/Users/joshuamartin/turing_work/3mod/WhiskerWisdom/my-app/src/Assets/Cat.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: initial;
+  font-family: "Comic Sans MS", "Curlz MT", "Sniglet", cursive;
 }
 
 .App-logo {
@@ -36,3 +41,25 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 600px) {
+  .fact-container {
+    grid-template-columns: 1fr; /* Display one column */
+    max-height: none; /* Remove the max-height limit */
+    overflow: visible; /* Show all items without scrolling */
+  }
+
+  input, button {
+    width: 100%; /* Make inputs and buttons full-width */
+  }
+}
+
+@media (min-width: 601px) {
+}
+
+
+
+
+
+
+

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import './Fact.css';
 
 const Fact = ({ name, text, favorite, id, deleteFact, favChange }) => {
- 
     return (
       <div className='fact'>
         <h3>{name}</h3>
@@ -17,7 +16,7 @@ const Fact = ({ name, text, favorite, id, deleteFact, favChange }) => {
             onChange={() => favChange(id)}
             />
         </label>
-        <button onClick={() => deleteFact(id)}>🗑</button>
+        <button onClick={() => deleteFact(id)}>𝔻𝕖𝕝𝕖𝕥𝕖 🗑</button>
       </div>
     )
     
