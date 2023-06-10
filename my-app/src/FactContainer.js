@@ -5,18 +5,7 @@ import './FactContainer.css';
 
 
 function FactContainer({facts, deleteFact, favChange}){
-    FactContainer.propTypes = {
-      facts: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        text: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired
-    }))
-        .isRequired,
-        deleteFact: PropTypes.func.isRequired,
-        favChange: PropTypes.func.isRequired
-  }
-  
+
     const factCards = facts.map(fact => {
       return (
         <Fact
@@ -39,3 +28,16 @@ function FactContainer({facts, deleteFact, favChange}){
   }
 
 export default FactContainer;
+
+FactContainer.propTypes = {
+  facts: PropTypes.arrayOf(
+  PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    favorite: PropTypes.bool.isRequired,
+    id: PropTypes.number.isRequired
+}))
+    .isRequired,
+    deleteFact: PropTypes.func.isRequired,
+    favChange: PropTypes.func.isRequired
+}

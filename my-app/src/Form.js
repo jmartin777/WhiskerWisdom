@@ -11,9 +11,7 @@ class Form extends Component {
       favorite: '',
       id: ''
     }
-    Form.propTypes = {
-      addFact: PropTypes.func.isRequired
-    };
+    
   }
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
@@ -59,3 +57,7 @@ class Form extends Component {
 }
 
 export default Form;
+
+Form.propTypes = {
+  addFact: PropTypes.func.isRequired
+};
