@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Form.css';
-import Fact from './Fact'
-import FactContainer from './FactContainer';
+import PropTypes from 'prop-types';
 
 class Form extends Component {
   constructor() {
@@ -12,8 +11,10 @@ class Form extends Component {
       favorite: '',
       id: ''
     }
+    Form.propTypes = {
+      addFact: PropTypes.func.isRequired
+    };
   }
-
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   }
@@ -22,14 +23,14 @@ class Form extends Component {
   }
 
   submitFact = event => {
-    event.preventDefault(); // prevents the page from refreshing when the form submits
+    event.preventDefault(); 
     const newFact = {
       id: Date.now(),
-      ...this.state // spreading in the title and description
+      ...this.state 
     }
     
-    this.props.addFact(newFact); // using the addIdea method from App that we passed as a prop to Form
-    this.clearInputs(); // invoking the method I wrote below to reset the inputs
+    this.props.addFact(newFact); 
+    this.clearInputs(); 
   }
 
   render() {

@@ -19,7 +19,6 @@ export const getFactByID = (id) => {
   }
 
 export const postFact = (dataIn) => {
-    //console.log(dataIn)
     fetch('http://catfacts.cloud:2053/facts', {
         method: 'POST',
         body: JSON.stringify(dataIn),
