@@ -10,7 +10,6 @@ function FactContainer({facts, deleteFact, favChange}){
       PropTypes.shape({
         name: PropTypes.string.isRequired,
         text: PropTypes.string.isRequired,
-        favorite: PropTypes.bool.isRequired,
         id: PropTypes.number.isRequired
     }))
         .isRequired,

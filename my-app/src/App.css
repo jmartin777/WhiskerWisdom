@@ -41,3 +41,25 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 600px) {
+  .fact-container {
+    grid-template-columns: 1fr; /* Display one column */
+    max-height: none; /* Remove the max-height limit */
+    overflow: visible; /* Show all items without scrolling */
+  }
+
+  input, button {
+    width: 100%; /* Make inputs and buttons full-width */
+  }
+}
+
+@media (min-width: 601px) {
+}
+
+
+
+
+
+
+
