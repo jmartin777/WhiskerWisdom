@@ -23,11 +23,11 @@ https://github.com/jmartin777. - Joshua Martin
 ### Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
 
-The learning goals of this project were to gain experience in developing a web application using modern web technologies and frameworks. The project aimed to improve skills in front-end development, including HTML, CSS, and JavaScript, as well as utilizing a popular JavaScript framework like React.
+The learning goals of this project were to gain experience in developing a web application using modern web technologies and frameworks. The project aimed to improve skills in front-end development, including JSX, CSS, and JavaScript, as well as utilizing a popular JavaScript framework like React.
 
 React: A JavaScript library for building user interfaces.
 CSS: Used for styling and layout of the application components.
-HTML: Used for structuring the web pages.
+JSX: Used for structuring the web pages.
 JavaScript: The primary programming language for interactivity and logic.
 React Router: A library for handling routing in the React application.
 Git: Version control system for tracking changes and collaborating with others.
