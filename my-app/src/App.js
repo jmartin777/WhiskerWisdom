@@ -6,7 +6,7 @@ import Form from './Form';
 import ErrorPage from './ErrorPage';
 import APIcalls from './APIcalls'
 import getFacts from './APIcalls';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { getFactByID,postFact, deleteFact , patchFavorite } from './APIcalls';
 
 

@@ -103,8 +103,32 @@ describe('Home Page', () => {
         });
       });
     });
+    it("Should remove a fact from the UI when the delete button is clicked", () => {
+      cy.visit("http://localhost:3000/");
+      
+      cy.get('.fact-container .fact:first-child').as('firstFact');
+      cy.get('.fact-container > :nth-child(1)')
+      cy.get(':nth-child(1) > button').click();
+      
+      cy.get('.fact-container .fact').should('have.length', 1);
+    });
     
-});
+    it("Should make the appropriate API call to delete the fact", () => {
+      cy.intercept("DELETE", "http://catfacts.cloud:2053/facts/*", {
+        statusCode: 200,
+        body: {},
+      }).as("deleteFact");
+    
+      cy.visit("http://localhost:3000/");
+      
+      cy.get('.fact-container .fact:first-child').as('firstFact');
+      cy.get('.fact-container > :nth-child(1)')
+      cy.get(':nth-child(1) > button').click();
+      
+      });
+    });
+    
+
 
 
 

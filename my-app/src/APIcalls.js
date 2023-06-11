@@ -1,4 +1,4 @@
-const getFacts = () => {
+export const getFacts = () => {
     return fetch('http://catfacts.cloud:2053/facts')
     .then(response => {
         if(!response.ok) {
