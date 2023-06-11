@@ -13,6 +13,8 @@ The application I built is called "Whisker Wisdom." It is a web application that
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
+<image src= https://media.giphy.com/media/aQLmLLBWgeKIQm8KmI/giphy.gif>
+
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
 
