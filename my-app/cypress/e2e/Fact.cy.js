@@ -1,6 +1,25 @@
 
 describe('Fact Component', () => {
   beforeEach(() => {
+    cy.intercept("GET", "http://catfacts.cloud:2053/facts", {
+      statusCode: 200,
+      body: [factData, factData2]
+    });
+
+    cy.intercept("POST", "http://catfacts.cloud:2053/facts", (req) => {
+      req.reply({
+        statusCode: 200,
+        body: {
+          favorite: false,
+          id: 20,
+          name: "Cancer in Cats",
+          text: "Cats, especially older cats, do get cancer. Many times this disease can be treated successfully."
+        }
+      });
+    }).as("postFact");
+
+    cy.visit("http://localhost:3000/");
+    
     cy.mount(
       <Fact
         name="Fact Name"

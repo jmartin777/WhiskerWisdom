@@ -3,6 +3,7 @@ import './App.css';
 import Fact from './Fact'
 import FactContainer from './FactContainer';
 import Form from './Form';
+import ErrorPage from './ErrorPage';
 import APIcalls from './APIcalls'
 import getFacts from './APIcalls';
 import { BrowserRouter as Router } from 'react-router-dom';

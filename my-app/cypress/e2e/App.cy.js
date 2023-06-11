@@ -40,7 +40,7 @@ describe('Home Page', () => {
     it("Should display 2 facts by default", () => {
       cy.get('.fact-container .fact').should('have.length', 2);
     })
-    
+
     it("Should have two input fields and a submit button that creates a new fact", () => {
       cy.get('[placeholder="Cat Fact Title"]').type("Title text");
       cy.get('[placeholder="Cat Fact"]').type("Fact text");
@@ -103,7 +103,7 @@ describe('Home Page', () => {
         });
       });
     });
-
+    
 });
 
 

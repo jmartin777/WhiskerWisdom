@@ -7,16 +7,18 @@ import './FactContainer.css';
 function FactContainer({facts, deleteFact, favChange}){
 
     const factCards = facts.map(fact => {
+      const favorite =
+    typeof fact.favorite === 'string' ? fact.favorite === 'true' : fact.favorite;
       return (
         <Fact
-          key={fact.id}
-          name={fact.name}
-          text={fact.text}
-          favorite={fact.favorite}
-          id={fact.id}
-          deleteFact = {deleteFact}
-          favChange= {favChange}
-        />
+        key={fact.id}
+        name={fact.name}
+        text={fact.text}
+        favorite={favorite} 
+        id={fact.id}
+        deleteFact={deleteFact}
+        favChange={favChange}
+      />
       )
     })
   
@@ -34,7 +36,6 @@ FactContainer.propTypes = {
   PropTypes.shape({
     name: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
-    favorite: PropTypes.bool.isRequired,
     id: PropTypes.number.isRequired
 }))
     .isRequired,
