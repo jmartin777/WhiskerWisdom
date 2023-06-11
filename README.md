@@ -13,7 +13,7 @@ The application I built is called "Whisker Wisdom." It is a web application that
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
-<iframe src="https://giphy.com/embed/aQLmLLBWgeKIQm8KmI" width="480" height="263" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/aQLmLLBWgeKIQm8KmI">via GIPHY</a></p>
+<image src= https://media.giphy.com/media/aQLmLLBWgeKIQm8KmI/giphy.gif>
 
 ### Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
