@@ -38,17 +38,19 @@ describe('Home Page', () => {
     });
 
     it("Should display 2 facts by default", () => {
-      cy.get(".fact-container").find(".fact").should("have.length", 2);
+      cy.get('.fact-container .fact').should('have.length', 2);
     })
+    
     it("Should have two input fields and a submit button that creates a new fact", () => {
-      cy.get('[placeholder="Fact Title"]').type("Title text");
-      cy.get('[placeholder="Fact"]').type("Fact text");
+      cy.get('[placeholder="Cat Fact Title"]').type("Title text");
+      cy.get('[placeholder="Cat Fact"]').type("Fact text");
       cy.get('form > button').click();
       cy.contains('.fact-container', 'Title text')
-      .should('be.visible')
-      .contains('.fact-container', 'Fact text')
-      .should('be.visible');
+        .should('be.visible')
+        .contains('.fact-container', 'Fact text')
+        .should('be.visible');
     });
+    
 
     it("Should intercept and handle GET request", () => {
       const factData = [
@@ -78,25 +80,26 @@ describe('Home Page', () => {
     });
 
     it("Should create a new fact with POST intercept", () => {
-      cy.get('[placeholder="Fact Title"]').type("Title text");
-      cy.get('[placeholder="Fact"]').type("Fact text");
-      cy.get('form > button').click();
-      cy.wait("@postFact").then((interception) => {
-        const requestBody = interception.request.body;
-        expect(requestBody.name).to.equal("Title text");
-        expect(requestBody.text).to.equal("Fact text");
-      });
-      cy.contains('.fact-container', 'Title text').should('be.visible');
-      cy.contains('.fact-container', 'Fact text').should('be.visible');
+      cy.get('[placeholder="Cat Fact Title"]').type('Title text');
+      cy.get('[placeholder="Cat Fact"]').type('Fact text');
+      cy.contains('form button', '𝕊𝕦𝕓𝕞𝕚𝕥 🐾').click();
+      cy.wait('@postFact').then((interception) => {
+      const requestBody = interception.request.body;
+      expect(requestBody.name).to.equal('Title text');
+      expect(requestBody.text).to.equal('Fact text');
+    });
+    cy.contains('.fact-container', 'Title text').should('be.visible');
+    cy.contains('.fact-container', 'Fact text').should('be.visible');
+
     });
 
     it("Should be able to favorite a fact", () => {
-      cy.get(".fact-container").find(".fact").first().as("firstFact"); 
-      cy.get("@firstFact").find("input[type='checkbox']").then(($checkbox) => {
-        const initialFavoriteState = $checkbox.prop("checked");
-        cy.get("@firstFact").find("input[type='checkbox']").click();
-        cy.get("@firstFact").find("input[type='checkbox']").should(($checkbox) => {
-          expect($checkbox.prop("checked")).to.equal(!initialFavoriteState);
+      cy.get('.fact-container .fact:first-child').as('firstFact');
+      cy.get('@firstFact').find('input[type="checkbox"]').then(($checkbox) => {
+        const initialFavoriteState = $checkbox.prop('checked');
+        cy.get('@firstFact').find('input[type="checkbox"]').click();
+        cy.get('@firstFact').find('input[type="checkbox"]').should(($checkbox) => {
+          expect($checkbox.prop('checked')).to.equal(!initialFavoriteState);
         });
       });
     });
