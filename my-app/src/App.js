@@ -6,7 +6,8 @@ import Form from './Form';
 import ErrorPage from './ErrorPage';
 import APIcalls from './APIcalls'
 import getFacts from './APIcalls';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+
 import { getFactByID,postFact, deleteFact , patchFavorite } from './APIcalls';
 
 
@@ -55,14 +56,36 @@ class App extends Component {
   render() {
     return (
       <Router>
-       <main className='App'>
-        <h1>Whisker Wisdom</h1>
-        <Form addFact={this.addFact} />
-        <FactContainer facts={this.state.facts} deleteFact={this.deleteFact} favChange={this.handleFavoriteChange} />
-       </main>
+        <main className='App'>
+          <h1>Whisker Wisdom</h1>
+          <nav>
+            <ul>
+              <li>
+                <Link to='/'>Home</Link>
+              </li>
+              <li>
+                <Link to='/error'>More Facts!</Link>
+              </li>
+            </ul>
+          </nav>
+          <Routes>
+            <Route path='/' element={<Home addFact={this.addFact} facts={this.state.facts} deleteFact={this.deleteFact} favChange={this.handleFavoriteChange} />} />
+            <Route path='/error' element={<ErrorPage />} />
+          </Routes>
+        </main>
       </Router>
     );
   }
 }
+
+function Home({ addFact, facts, deleteFact, favChange }) {
+  return (
+    <div>
+      <Form addFact={addFact} />
+      <FactContainer facts={facts} deleteFact={deleteFact} favChange={favChange} />
+    </div>
+  );
+}
+
 
 export default App;
