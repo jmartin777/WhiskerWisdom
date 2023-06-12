@@ -1,5 +1,5 @@
 export const getFacts = () => {
-    return fetch('http://catfacts.cloud:2053/facts')
+    return fetch('https://catfacts.cloud:2053/facts')
     .then(response => {
         if(!response.ok) {
           throw new Error("Failed to fetch facts");
@@ -9,7 +9,7 @@ export const getFacts = () => {
   }
 
 export const getFactByID = (id) => {
-    return fetch('http://catfacts.cloud:2053/facts/'+id)
+    return fetch('https://catfacts.cloud:2053/facts/'+id)
     .then(response => {
         if(!response.ok) {
           throw new Error("Failed to fetch fact");
@@ -19,7 +19,7 @@ export const getFactByID = (id) => {
   }
 
 export const postFact = (dataIn) => {
-    fetch('http://catfacts.cloud:2053/facts', {
+    fetch('https://catfacts.cloud:2053/facts', {
         method: 'POST',
         body: JSON.stringify(dataIn),
         headers: {"Content-Type": "application/json"}
@@ -34,7 +34,7 @@ export const postFact = (dataIn) => {
 
 export const deleteFact=(id)=>{
     
-    return fetch('http://catfacts.cloud:2053/facts/'+id, {
+    return fetch('https://catfacts.cloud:2053/facts/'+id, {
         method: 'DELETE',
         headers: {
         'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ export const deleteFact=(id)=>{
 }
 
 export const patchFavorite = (id,favoriteState) =>{
-    return fetch('http://catfacts.cloud:2053/facts/'+id, {
+    return fetch('https://catfacts.cloud:2053/facts/'+id, {
         method: 'PATCH',
         body: JSON.stringify(favoriteState),
         headers: {"Content-Type": "application/json"}
